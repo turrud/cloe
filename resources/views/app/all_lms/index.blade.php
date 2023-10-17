@@ -55,12 +55,6 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.kunci_sukses.inputs.text')
                                 </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.kunci_sukses.inputs.file')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.kunci_sukses.inputs.image')
-                                </th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -73,23 +67,6 @@
                                 <td class="px-4 py-3 text-left">
                                     {{ $lms->text ?? '-' }}
                                 </td>
-                                {{-- <td class="px-4 py-3 text-left">
-                                    @if($lms->file)
-                                    <a
-                                        href="{{ \Storage::url($lms->file) }}"
-                                        target="blank"
-                                        ><i
-                                            class="mr-1 icon ion-md-download"
-                                        ></i
-                                        >&nbsp;Download</a
-                                    >
-                                    @else - @endif
-                                </td> --}}
-                                {{-- <td class="px-4 py-3 text-left">
-                                    <x-partials.thumbnail
-                                        src="{{ $lms->image ? \Storage::url($lms->image) : '' }}"
-                                    />
-                                </td> --}}
                                 <td
                                     class="px-4 py-3 text-center"
                                     style="width: 134px;"

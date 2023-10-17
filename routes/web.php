@@ -20,6 +20,9 @@ use App\Http\Controllers\ProfileController;
  Route::get('/', [ViewController::class, 'index'])->name(
         'home.index'
     );
+ Route::get('/load', [ViewController::class, 'create'])->name(
+        'home.create'
+    );
 
 Route::get('/admin', function () {
     return view('welcome');

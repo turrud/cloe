@@ -22,7 +22,7 @@ class ViewController extends Controller
      */
     public function create()
     {
-        //
+        return view('load');
     }
 
     /**
@@ -30,7 +30,22 @@ class ViewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $validated = $request->validated();
+        if ($request->hasFile('file')) {
+            $validated['file'] = $request->file('file')->store('public');
+        }
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('public');
+        }
+
+        $lms = Lms::create($validated);
+
+        return redirect()
+            ->route('all-lms.edit', $lms)
+            ->withSuccess(__('crud.common.created'));
     }
 
     /**
