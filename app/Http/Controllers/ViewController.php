@@ -16,6 +16,10 @@ class ViewController extends Controller
 
         return view('index', compact('allLms'));
     }
+    public function indexx()
+    {
+        return view('index-io');
+    }
 
     /**
      * Show the form for creating a new resource.
