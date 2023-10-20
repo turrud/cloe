@@ -17,7 +17,12 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
- Route::get('/', [ViewController::class, 'indexx'])->name(
+
+Route::get('/', function () {
+    return view("in");
+});
+
+ Route::get('/oi', [ViewController::class, 'indexx'])->name(
         'home.index-io'
     );
  Route::get('/text', [ViewController::class, 'index'])->name(
@@ -73,6 +78,7 @@ Route::prefix('/admin')
             'all-lms.update'
         );
         Route::delete('all-lms/{lms}', [LmsController::class, 'destroy'])->name(
-            'all-lms.destroy'
+
+     'all-lms.destroy'
         );
     });
