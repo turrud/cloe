@@ -20,10 +20,10 @@ class LmsStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['nullable', 'max:255', 'string'],
-            'text' => ['required', 'max:255', 'string'],
+            'name' => ['nullable', 'string'],
+            'text' => ['required', 'string'],
             'file' => ['nullable', 'file'],
-            'image' => ['nullable', 'image', 'max:1024'],
+            'image' => ['nullable', 'image'],
         ];
     }
 }
